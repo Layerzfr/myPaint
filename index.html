@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MyPaint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="head container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <div class="row">
+                    <button id="clear">Clear</button>
+                    <button id="symetrie">Symetrie</button>
+                </div>
+                <div class="row">
+                    <label>Ajouter une image:</label>
+                    <input multiple id="inputImg" type="file"/>
+                </div>
+            </div>
+            <div class="col-4 toolDiv">
+                <div class="row">
+                    <button class="tool fas fa-pencil-alt" id="crayon" value="crayon"></button>
+                    <button class="tool fas fa-minus" id="ligne" value="ligne"></button>
+                    <button class="tool far fa-square" id="rectangle" value="rectangle"></button>
+                    <button class="tool far fa-circle" id="cercle" value="cercle"></button>
+                    <button class="tool fas fa-eraser" id="gomme" value="gomme"></button>
+                </div>
+                <div class="row">
+                    <p>Couleur:</p>
+                    <input id="couleur" type="color">
+                </div>
+                <div class="row">
+                    <p>Taille:</p>
+                    <input class="taille" value="1" type="range" min="1" max="100">
+                    <input type="number" min="1" max="100" value="1" id="actual">px
+                </div>
+                <div class="row" id="more">
+                    <p>Plus pour cet outil :</p>
+                    <div class="filldiv">
+                        <button class="more" value="fill">Remplis</button>
+                    </div>
+                    <div>
+                        <button class="more" value="nonfill">Vide</button>
+                    </div>
+                    <div class="containCouleurFill">
+                        <p>Couleur:</p>
+                        <input class="couleurfill" type="color">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="row" id="dl">
+                    <button id="addCalque">Ajouter un calque</button>
+                    <button class="far fa-arrow-alt-circle-down" id="dlButton"></button>
+                </div>
+                <div class="col-6" id="calque">
+                    <div class="inputCalque">
+                        <input type="checkbox" checked value="calque1">
+                        <p>calque1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="logo">
+                <h1>MY PAINT</h1>
+            </div>
+        </div>
+    </div>
+    <div id="canvasArea">
+        <div id="main">
+            <canvas class="canvas" id="canvas"></canvas>
+        </div>
+        <canvas class='canvas' id='canvasSym'></canvas>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
